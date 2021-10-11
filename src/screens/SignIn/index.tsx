@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/core';
 import React, { useState } from 'react';
 import { View, Text, Image, StatusBar } from 'react-native';
 
@@ -7,6 +8,13 @@ import { styles } from './styles';
 
 
 export function SignIn() {
+
+    const navigation = useNavigation();
+
+    function handleSignIn(){
+        navigation.navigate('Home');
+    }
+
 
     return (
         <View style={ styles.container }>
@@ -31,7 +39,7 @@ export function SignIn() {
 
                 <ButtonIcon 
                     title="Entrar com Discord"
-                    activeOpacity={0.8}
+                    onPress={handleSignIn}
                 />
 
             </View>
